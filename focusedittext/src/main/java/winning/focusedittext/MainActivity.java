@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText et_anim;
     private Button tv_test;
     private Button test_coun;
+    private Button btn_toast;
     private TextView tv_count;
     private TextView tv_left;
     private TextView tv_right;
@@ -55,6 +56,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        String date = "20201221";
+        int year = Integer.parseInt(date.substring(0, 4));
+        int month = Integer.parseInt(date.substring(4, 6));
+        int day = Integer.parseInt(date.substring(6, 8));
+
+
+        final int[] i = {0};
+
+        btn_toast = (Button) findViewById(R.id.btn_toast);
+        btn_toast.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUtil.showToast(MainActivity.this, "aaa");
+            }
+        });
+
         et_focus = (EditText) findViewById(R.id.et_focus);
         et_focus.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
@@ -175,5 +193,6 @@ public class MainActivity extends AppCompatActivity {
     private void upDateDate() {
         tv_count.setText(fmtDate.format(dateAndTime.getTime()));
     }
+
 
 }

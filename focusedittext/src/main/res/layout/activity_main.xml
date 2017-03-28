@@ -79,4 +79,11 @@
             android:textColor="@color/colorAccent"/>
     </LinearLayout>
 
+    <Button
+        android:id="@+id/btn_toast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_anim"
+        android:text="hello"/>
+
 </RelativeLayout>
